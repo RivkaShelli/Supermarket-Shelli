@@ -1,0 +1,14 @@
+img{
+    height: 300px;
+    width: 430px;
+
+}
+div{
+    padding-left: 30px;
+}
+*{
+    color: aliceblue;
+}
+p{
+    font-size: larger;
+}

@@ -1,0 +1,11 @@
+<div class="material-table">
+    <mat-form-field appearance="fill">
+        <mat-label>Search product</mat-label>
+        <input matInput [(ngModel)]="searchTerm" placeholder="Search product by full name" />
+        <mat-icon class='search-icon' color="primary" matPrefix (click)="findProduct()">search</mat-icon>
+    </mat-form-field>
+</div>
+<section fxLayout="row wrap" fxLayoutGap="20px" *ngIf="searchTerm &&searchTerm.length!==0 " >
+    <h1 *ngIf="show" >Latest Search:</h1>
+    <app-product [product]="serchResult"></app-product>
+ </section>

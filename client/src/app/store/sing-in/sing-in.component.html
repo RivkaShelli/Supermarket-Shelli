@@ -1,0 +1,6 @@
+<div fxFlex="100" >
+    <app-login *ngIf="!userDetail" fxFlex="30"></app-login>
+    <app-welcome *ngIf="userDetail" [userCart]="cart" [userDetail]="userDetail"  fxFlex="30"></app-welcome>
+    <app-about-us  fxFlex="30"></app-about-us>
+    <app-details *ngIf="userDetail"  fxFlex="30"></app-details>
+</div>

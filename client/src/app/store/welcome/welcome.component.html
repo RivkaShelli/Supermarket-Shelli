@@ -1,0 +1,7 @@
+<div *ngIf="userCart" >
+<img src="../../../assets/welcome.jpg">
+<h1>Welcome {{userDetail?.first_name}}</h1>
+<h3 *ngIf="userCart.cartItems.length>0">You have an open cart from: {{userCart.create_date| date}}</h3>
+<button mat-raised-button color="primary"  routerLink="/store" *ngIf="userCart.cartItems.length>0">Continue Shopping</button>
+<button mat-raised-button color="primary" routerLink="/store" *ngIf="userCart.cartItems.length === 0">Start Shopping</button>
+</div>

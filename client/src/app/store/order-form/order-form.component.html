@@ -1,0 +1,36 @@
+<div *ngIf="!newOrder" class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>New Order</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="ordetForm" class="example-form">
+            <mat-card-content>
+                <mat-label>City:</mat-label>
+                <mat-select placeholder="city" formControlName="city">
+                    <mat-option *ngFor="let city of cities" [value]="city">
+                        {{city}}
+                    </mat-option>
+                </mat-select>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Street:</mat-label>
+                    <input matInput placeholder="street" formControlName="street">
+                </mat-form-field><br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Shipping Date:</mat-label>
+                    <input type="date" matInput placeholder="shipping_date" formControlName="shipping_date">
+                </mat-form-field><br>
+                <mat-form-field class="example-full-width">
+                    <mat-label>Credit Card:</mat-label>
+                    <input matInput placeholder="digits" formControlName="digits">
+                </mat-form-field><br>
+            </mat-card-content>
+            <button (click)="order()" mat-stroked-button color="primary" class="btn-block">Order Now</button>
+
+        </form>
+    </mat-card>
+</div>
+<p *ngIf="newOrder">
+    Your order successfully sent.
+</p>
+<button mat-raised-button color="primary" *ngIf="newOrder" role="button" (click)="new()">New Order</button>
+<button mat-raised-button color="primary" *ngIf="newOrder" role="button" (click)="finish()">No Thanks</button>

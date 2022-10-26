@@ -1,0 +1,15 @@
+<mat-sidenav-container *ngIf="cart?.cartItems"  class="example-container" [hasBackdrop]="true" fxLayout>
+    <mat-sidenav mode="over"  [(opened)]="opened">
+       <mat-icon (click)="opened=!opened" fontIcon="cancel"></mat-icon>
+        <h1>My Cart</h1>
+        <app-cart-item fxLayout *ngFor="let cart of cart?.cartItems"  [item]="cart"></app-cart-item>
+        <button  (click)="orderNow()" mat-raised-button color="primary">{{cart.cartItems |sum:'price'}}₪ To Payment</button>
+        </mat-sidenav>
+    <mat-sidenav-content>
+        <button >
+            <mat-icon (click)="opened=!opened" mat-raised-button color="primary"  fontIcon="shopping_cart"></mat-icon>
+        </button></mat-sidenav-content>
+</mat-sidenav-container>
+
+
+

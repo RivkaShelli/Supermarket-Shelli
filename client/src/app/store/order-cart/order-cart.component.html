@@ -1,0 +1,13 @@
+
+<div  class="container">
+    <span>
+        <h2 >Recept</h2>
+    </span>
+    <span><a routerLink="/store">Back to shop</a></span>
+<div  *ngFor="let item of cartitems">
+    <span> <img [src]="imageUrl+item.image" />X</span>
+    <span>{{item.amount}}</span>
+    <span>Total: {{item.price}}₪ </span>
+</div>
+<div>TOTAL:{{cartitems |sum:'price'}}₪</div>
+</div>

@@ -1,0 +1,29 @@
+<div class="login-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <a routerLink="/store">Go Back</a>
+        <mat-card-header>
+            <mat-card-title>Add New Product</mat-card-title>
+        </mat-card-header>
+        <form [formGroup]="addForm" (ngSubmit)="addNewProduct()" class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="product_name" formControlName="product_name" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  matInput placeholder="price" formControlName="price"  >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input  matInput placeholder="image" formControlName="image" >
+                </mat-form-field><br>
+                    <mat-select  placeholder="Category" formControlName="product_category">
+                        <mat-option *ngFor="let cat of categories |slice:1" 
+                            [value]="cat.category_id">
+                            {{cat.category_name}}
+                        </mat-option>
+                    </mat-select>   
+            </mat-card-content>
+           
+            <button type="submit" mat-stroked-button color="primary" class="btn-block">Add</button>
+        </form>
+    </mat-card>
+</div>

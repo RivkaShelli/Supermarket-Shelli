@@ -1,0 +1,9 @@
+<section fxLayout>
+    <app-cart fxFlex="30" [cart]="cart" *ngIf="user?.role==0"></app-cart>
+    <div fxFlex="80">
+        <app-categories (categoryClick)="onCategoryClick($event)"></app-categories>
+        <app-serch></app-serch>
+        <button class="add" mat-raised-button color="primary" *ngIf="user?.role==1" (click)="AddProduct()">Add Product</button>
+        <app-all-products [productArr]="productArr" [user]="user" [category$]="currentCategory$"></app-all-products>
+    </div>
+</section>

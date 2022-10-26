@@ -1,0 +1,11 @@
+<mat-card *ngIf="product">
+        <img [src]="imageUrl+product.image"  />
+        <mat-card-title>{{product.product_name}}</mat-card-title>
+        <mat-card-subtitle>{{product.price}}₪</mat-card-subtitle>
+      <button (click)="onAddToCartClick(product)" *ngIf="user?.role==0" mat-raised-button color="primary">Add To Cart</button>
+      <button (click)="onEditClick(product)" mat-raised-button color="primary" *ngIf="user?.role==1">
+              Edit Product
+        </button>
+</mat-card>
+
+

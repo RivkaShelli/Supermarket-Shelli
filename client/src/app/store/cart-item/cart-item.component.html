@@ -1,0 +1,7 @@
+<div *ngIf="item">
+        <span> <img [src]="imageUrl+item.image" />X</span>
+       <span>{{item.amount}}</span>
+    <span>Total: {{item.price}}₪ </span>
+    <span><mat-icon (click)="onDeleteClick(item)" mat-raised-button color="primary" fontIcon="delete"></mat-icon> </span>
+</div>
+

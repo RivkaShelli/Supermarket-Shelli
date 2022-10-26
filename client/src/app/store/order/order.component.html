@@ -1,0 +1,4 @@
+<div fxFlex="100">
+    <app-order-cart [cartitems]="cartItems"  fxFlex="50%"></app-order-cart>
+    <app-order-form [cartId]="cartId" [totalPrice]="cartItems|sum:'price'" fxFlex="50%" ></app-order-form>
+</div>

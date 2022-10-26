@@ -1,0 +1,14 @@
+<div class="pink" mat-dialog-content>
+    <p>Choose quantity</p>
+    <div fxLayout="row">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="less()" fontIcon="remove"></mat-icon>
+        <input matInput [(ngModel)]="data.quantity">
+        <mat-icon aria-hidden="false" aria-label="Example home icon" (click)="plus()" fontIcon="add"></mat-icon>
+    </div>
+</div>
+<div mat-dialog-actions>
+    <button  mat-raised-button color="primary" mat-button (click)="onNoClick()">Cancel</button>
+    <button  mat-raised-button color="primary" mat-button [mat-dialog-close]="data.quantity" cdkFocusInitial>Add To Cart</button>
+</div>
+
+

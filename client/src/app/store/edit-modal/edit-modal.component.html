@@ -1,0 +1,26 @@
+<div class="edit-wrapper" fxLayout="row" fxLayoutAlign="center center">
+    <mat-card class="box">
+        <mat-card-header>
+            <mat-card-title>Edit {{data.product_name}}</mat-card-title>
+        </mat-card-header>
+        <form class="example-form">
+            <mat-card-content>
+                <mat-form-field class="example-full-width">
+                    <input name="price" matInput placeholder="Price" [(ngModel)]="data.price" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input name="image" matInput placeholder="Image" [(ngModel)]="data.image" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input name="name" matInput placeholder="Name" [(ngModel)]="data.product_name" >
+                </mat-form-field>
+                <mat-form-field class="example-full-width">
+                    <input name="category" matInput placeholder="Category" [(ngModel)]="data.product_category" >
+                </mat-form-field>
+            </mat-card-content>
+            <span>
+            <button mat-button (click)="onCancelClick()">Cancel</button>
+            <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Save Changes</button></span>
+        </form>
+    </mat-card>
+</div>
